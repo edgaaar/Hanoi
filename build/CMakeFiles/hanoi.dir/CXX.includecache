@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Hanoi.h
+iostream
+-
+stack
+-
+cmath
+-
+
+/home/edgar/Programas/Hanoi/src/Hanoi.cpp
+Hanoi.h
+/home/edgar/Programas/Hanoi/src/Hanoi.h
+
+/home/edgar/Programas/Hanoi/src/main.cpp
+Hanoi.h
+/home/edgar/Programas/Hanoi/src/Hanoi.h
+
