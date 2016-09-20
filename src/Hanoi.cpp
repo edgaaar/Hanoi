@@ -5,18 +5,18 @@
 Hanoi::Hanoi(int n)
 {
 	Discos = n;
-	int O = (origen.empty())?INFINITY:origen.top();
-	int A = (aux.empty())?INFINITY:aux.top();
-	int D = (destino.empty())?INFINITY:destino.top();
+	O = (origen.empty())?INFINITY:origen.top();
+	A = (aux.empty())?INFINITY:aux.top();
+	D = (destino.empty())?INFINITY:destino.top();
 }
 
 void Hanoi::Resolver()
 {
-	if (Discos%2 == 0)
+	if (Discos%2 != 0)
 	{
 		for (int i = 1; i <= pow(2,Discos)-1; ++i)
 		{
-			if (i%3 == 1)
+			if (i%3 == 0)
 			{
 				OrigenDestino();
 			}
@@ -24,7 +24,7 @@ void Hanoi::Resolver()
 			{
 				OrigenAuxiliar();
 			}
-			if (i%3 == 0)
+			if (i%3 == 1)
 			{
 				AuxiliarDestino();
 			}
@@ -32,7 +32,7 @@ void Hanoi::Resolver()
 		}
 	}
 
-	if (Discos%2 != 0)
+	if (Discos%2 == 0)
 	{
 		for (int i = 1; i <= pow(2,Discos)-1; ++i)
 		{
@@ -59,6 +59,7 @@ void Hanoi::LlenarTorre()
 	{
 		this->origen.push(i);
 	}
+
 }
 
 void Hanoi::OrigenAuxiliar()
@@ -104,4 +105,3 @@ void Hanoi::AuxiliarDestino()
 		destino.pop();
 	}
 }
-
